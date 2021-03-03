@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid gray;
+            padding: 0;
+            text-align: center;
+            font-size: 13px;
+            width: 80px;
+            min-width: 80px;
+            max-width: 80px;
+            height: 20px;
+            min-height: 20px;
+            max-height: 20px;
+            word-break: break-word;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+        td.titleCell {
+            font-weight: bold;
+        }
+    </style>
+    <link href="../../lib/element-ui-v2.15.1.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="app">
+    <!--
+        isShow: Boolean,
+        projName: String,
+        dsi: Object,
+        width: String, // 550px
+    -->
+    <el-button @click="dIsShowDsiDetails = true">Button</el-button>
+    <dialog-project-dsi-details :is-show="dIsShowDsiDetails" :proj-name="projName"
+        :dsi="dsi" ></dialog-project-dsi-details>
+</div>
+</body>
+<!-- import Vue before Element -->
+<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+<script src="../../lib/vue-v2.6.11.js"></script>
+<!-- import JavaScript -->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<script src="../../lib/element-ui-v2.15.1.js"></script>
+<script src="components/dialog-project-dsi-details.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        components: {
+            'dialog-project-dsi-details': dislogProjectDsiDetail,
+        },
+        data: function () {
+            return {
+                dIsShowDsiDetails: false,
+                projName: "test项目2",
+                dsi: {
+                    dsiValue: 1,
+                    totalFrDsiValue: 2,
+                    blockDsiValue: 3,
+                    totalDefectDsiValue: 4,
+                    dsiTarget: 5,
+                    gap: 6,
+                }
+            }
+        }
+    })
+</script>
+</html>

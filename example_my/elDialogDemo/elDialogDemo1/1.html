@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid gray;
+            padding: 0;
+            text-align: center;
+            font-size: 13px;
+            width: 80px;
+            min-width: 80px;
+            max-width: 80px;
+            height: 20px;
+            min-height: 20px;
+            max-height: 20px;
+            word-break: break-word;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+        td.titleCell {
+            font-weight: bold;
+        }
+    </style>
+    <link href="../../lib/element-ui-v2.15.1.css" rel="stylesheet"/>
+</head>
+<body>
+    <!--
+        visible:
+        center: Boolean,
+        proj: {
+            projName
+            dsiValue
+            totalFrDsiValue
+            blockDsiValue
+            totalDefectDsiValue
+            dsiTarget
+            gap
+        }
+    -->
+<div id="app">
+    <el-button @click="visible = true">Button</el-button>
+    <el-dialog :visible.sync="visible" :center="true" width="550px"
+        :close-on-click-modal="false" :show-close="true">
+        <span slot="title">{{proj.projName}} DSI 详情</span>
+        <table style="margin: 0 auto;">
+            <tr>
+                <td colspan="3" class="titleCell">DSI Value</td>
+                <td class="titleCell">DSI Target</td>
+                <td class="titleCell">GAP</td>
+            </tr>
+            <tr>
+                <td colspan="3">{{proj.dsiValue}}</td>
+                <td rowspan="3">{{proj.dsiTarget}}</td>
+                <td rowspan="3">{{proj.gap}}</td>
+            </tr>
+            <tr>
+                <td class="titleCell">Total FR DSI Value</td>
+                <td class="titleCell">Block DSI Value</td>
+                <td class="titleCell">Total Defect DSI Value</td>
+            </tr>
+            <tr>
+                <td>{{proj.totalFrDsiValue}}</td>
+                <td>{{proj.blockDsiValue}}</td>
+                <td>{{proj.totalDefectDsiValue}}</td>
+            </tr>
+        </table>
+    </el-dialog>
+</div>
+</body>
+<!-- import Vue before Element -->
+<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+<script src="../../lib/vue-v2.6.11.js"></script>
+<!-- import JavaScript -->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<script src="../../lib/element-ui-v2.15.1.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                visible: false,
+                proj: {
+                    projName: "test项目1",
+                    dsiValue: 454.32,
+                    totalFrDsiValue: 3.87,
+                    blockDsiValue: 26,
+                    totalDefectDsiValue: 424.45,
+                    dsiTarget: 160,
+                    gap: 294.32,
+                }
+            }
+        }
+    })
+</script>
+</html>
