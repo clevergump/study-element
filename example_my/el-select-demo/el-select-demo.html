@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+
+        </style>
+        <link href="../lib/element-ui-v2.15.1.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <el-select
+                id="select1"
+                v-model="value"
+                multiple
+                filterable
+                default-first-option
+                collapse-tags="true"
+                placeholder="请选择文章标签">
+            <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.projectName"
+                    :value="item.projectId">
+            </el-option>
+        </el-select>
+    </body>
+    <!-- import Vue before Element -->
+    <script src="../lib/vue-v2.6.11.js"></script>
+    <!-- import JavaScript -->
+    <script src="../lib/element-ui-v2.15.1.js"></script>
+    <script>
+        new Vue({
+            el: '#select1',
+            data() {
+                return {
+                    options: [
+                        {projectId: 1, projectName: "A30A TMO"},
+                        {projectId: 2, projectName: "A3A"},
+                        {projectId: 3, projectName: "A3A 10 4G"},
+                        {projectId: 4, projectName: "A3A 8 4G"},
+                        {projectId: 5, projectName: "A3A 8 4G Refresh"},
+                        {projectId: 6, projectName: "A3A 8 4G TELUS"},
+                        {projectId: 7, projectName: "A3A 8 4G TMO"},
+                        {projectId: 8, projectName: "A3A PLUS"},
+                        {projectId: 9, projectName: "A3A VF"},
+                        {projectId: 10, projectName: "A3A XL 4G"},
+                        {projectId: 11, projectName: "A5A INFINI"},
+                        {projectId: 12, projectName: "A5A INFINI(CN)"},
+                        {projectId: 13, projectName: "A5X"},
+                        {projectId: 14, projectName: "A70A XL MPCS"},
+                        {projectId: 15, projectName: "A70A XL TMO"},
+                        {projectId: 16, projectName: "Apollo 8 4G"},
+                        {projectId: 17, projectName: "Apollo 8 4G TMO"},
+                        {projectId: 18, projectName: "Apollo 8 S 4G"},
+                        {projectId: 19, projectName: "Aquaman 10 4G"},
+                        {projectId: 20, projectName: "Aquaman 10 Pro"},
+                        {projectId: 21, projectName: "Aquaman 10 WIFI"},
+                        {projectId: 22, projectName: "Aquaman 10 WIFI KDDI"},
+                        {projectId: 23, projectName: "Austin"},
+                        {projectId: 24, projectName: "B-ATHENA"},
+                        {projectId: 25, projectName: "B-ATHENA CN"},
+                        {projectId: 26, projectName: "B-KRYPTON O"},
+                        {projectId: 27, projectName: "B-LUNA"},
+                        {projectId: 28, projectName: "B-MERCURY O"},
+                        {projectId: 29, projectName: "B-MINERVA"},
+                        {projectId: 30, projectName: "Bangkok TF"},
+                    ],
+                    value: []
+                }
+            },
+        })
+    </script>
+</html>
