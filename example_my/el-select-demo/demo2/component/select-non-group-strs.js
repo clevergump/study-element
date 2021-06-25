@@ -34,7 +34,6 @@ let SelectNonGroupStrs = {
       type: Boolean,
       default: false
     },
-    // 项目类别的数组
     optionStrs: {
       type: Array,
       default: () => [],
