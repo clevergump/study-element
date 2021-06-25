@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../lib/element-ui-v2.15.1.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="app">
+        <p>select demo:</p>
+        <select-non-group-strs :multiple="true" :option-strs="dOptionStrs"
+                               :empty-option="dEmptyOption"
+                               @change="mOnSelectChanged"
+        >
+        </select-non-group-strs>
+        <select-non-group-strs :multiple="false" :option-strs="dOptionStrs"
+                               :empty-option="dEmptyOption"
+        >
+        </select-non-group-strs>
+    </div>
+    <script src="../../lib/lodash-4.17.11.js"></script>
+    <script src="../../lib/vue-v2.6.11.js"></script>
+    <script src="../../lib/element-ui-v2.15.1.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
